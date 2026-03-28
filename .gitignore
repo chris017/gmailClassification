@@ -1,0 +1,29 @@
+# Credentials & tokens
+token.json
+client_secret_*.json
+
+# Personal email data
+emails.db
+emails.parquet
+
+# Trained model artefacts
+model.pkl
+confusion_matrix.png
+distilbert_model/
+distilbert_model.zip
+
+# Colab / export artefacts
+finetune_distilbert.py
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
