@@ -55,8 +55,16 @@ def load_bert():
     model = DistilBertForSequenceClassification.from_pretrained(BERT_DIR)
     model.to(device)
     model.eval()
-    with open(f"{BERT_DIR}/label_encoder.pkl", "rb") as f:
-        le = pickle.load(f)
+
+    if os.path.exists(BERT_DIR):
+        with open(f"{BERT_DIR}/label_encoder.pkl", "rb") as f:
+            le = pickle.load(f)
+    else:
+        from huggingface_hub import hf_hub_download
+        pkl_path = hf_hub_download(repo_id=BERT_DIR, filename="label_encoder.pkl")
+        with open(pkl_path, "rb") as f:
+            le = pickle.load(f)
+
     return tokenizer, model, le, device
 
 @st.cache_resource
