@@ -176,10 +176,6 @@ with tab1:
         )
         st.plotly_chart(fig3, use_container_width=True)
 
-    st.subheader("Average Feature Values by Category")
-    feat_df = pd.DataFrame(s["feature_averages"])
-    st.dataframe(feat_df.style.background_gradient(cmap="Reds"), use_container_width=True)
-
     st.divider()
 
     st.subheader("Arrival Heatmap — Hour x Weekday")
@@ -224,17 +220,6 @@ with tab1:
     fig_kw.update_layout(yaxis={"categoryorder": "total ascending"}, showlegend=False)
     st.plotly_chart(fig_kw, use_container_width=True)
 
-    st.divider()
-
-    st.subheader("Spam Rate Over Time")
-    spam_trend = pd.DataFrame(s["monthly_spam_rate"])
-    if not spam_trend.empty:
-        fig_trend = px.line(
-            spam_trend, x="month", y="spam_rate",
-            markers=True, color_discrete_sequence=["#e74c3c"],
-        )
-        fig_trend.update_layout(xaxis_title="Month", yaxis_title="Spam Rate (%)")
-        st.plotly_chart(fig_trend, use_container_width=True)
 
 
 # ── Tab 2: Predict ────────────────────────────────────────────────────────────
