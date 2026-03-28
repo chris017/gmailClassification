@@ -2,7 +2,7 @@
 
 A 7-class email classifier built on my personal Gmail inbox using fine-tuned DistilBERT, with a rule-based spam override layer and a Streamlit dashboard for live predictions and inbox analytics.
 
-**Live demo:** [Streamlit App](https://share.streamlit.io)
+**Live demo:** [Streamlit App](https://gmailclassification.streamlit.app)
 **Model:** [chris017/emailClassification](https://huggingface.co/chris017/emailClassification)
 
 ---
