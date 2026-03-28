@@ -1,6 +1,7 @@
 pandas
 plotly
 torch
-transformers
+transformers==4.47.1
+scikit-learn
 safetensors
 huggingface_hub
