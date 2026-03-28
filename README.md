@@ -186,6 +186,9 @@ The fine-tuned model (~500MB) is too large for GitHub. It is hosted on [Hugging 
 python -m venv venv
 source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
+
+# Additional packages needed for local data collection and training
+pip install google-api-python-client google-auth-oauthlib scikit-learn scipy datasets
 ```
 
 ### 3. Collect emails
@@ -248,3 +251,5 @@ To deploy your own instance:
 3. Update `BERT_DIR` in `app.py` to your HF repo ID
 4. Run `export_stats.py` locally and commit `stats.json`
 5. Connect the repository at [share.streamlit.io](https://share.streamlit.io)
+6. In the Streamlit Cloud dashboard → **Settings** → **Advanced settings** → set **Python version to 3.11** (required for PyTorch compatibility — `runtime.txt` is not supported by Streamlit Cloud)
+7. Deploy
